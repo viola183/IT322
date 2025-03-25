@@ -58,7 +58,7 @@ INSERT INTO `users` (`userId`, `firstName`, `lastName`, `email`, `password`, `ph
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`userId`);
-
+    
 --
 -- AUTO_INCREMENT for dumped tables
 --

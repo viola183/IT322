@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2025 at 11:06 AM
+-- Generation Time: Feb 12, 2025 at 12:16 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,17 +37,9 @@ CREATE TABLE `users` (
   `gender` enum('Male','Female') NOT NULL,
   `birthday` date NOT NULL,
   `verification` int(11) NOT NULL DEFAULT 0,
-  `profilePicture` longblob DEFAULT NULL,
-  `role` varchar(255) NOT NULL,
+  `profilePicture` longblob NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`userId`, `firstName`, `lastName`, `email`, `password`, `phoneNumber`, `gender`, `birthday`, `verification`, `profilePicture`, `role`, `createdAt`) VALUES
-(1, 'Dummy', 'Account', 'dummy@gmail.com', '123123', '091231241', 'Male', '2025-02-17', 0, NULL, 'admin', '2025-02-27 10:33:05');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +59,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
